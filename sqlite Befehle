@@ -1,0 +1,29 @@
+
+SELECT song.rating, song.strTitle, artist.strArtist FROM song, artist WHERE rating >= 1 AND artist.idArtist = song.idArtist;
+
+//alle Lieder, wie MySQL
+
+
+sqlite> SELECT song.rating FROM song, artist WHERE artist.idArtist = song.idArtist AND song.strTitle = "I Want You" AND artist.strArtist = "Bob Dylan";
+//Einzelnes Lied
+
+
+FUNKTIONIERT!!!!!!!!!!!!!!!!! EINZELNES LIED UPDATE
+
+UPDATE song SET rating = 5 WHERE idArtist = (SELECT song.idArtist FROM song, artist WHERE artist.idArtist = song.idArtist AND song.strTitle = "I Want You" AND artist.strArtist = "Bob Dylan") AND strTitle = (SELECT song.strTitle FROM song, artist WHERE artist.idArtist = song.idArtist AND song.strTitle = "I Want You" AND artist.strArtist = "Bob Dylan");
+
+
+
+UPDATE song SET rating = 2 WHERE idArtist = (SELECT song.idArtist FROM song, artist WHERE artist.idArtist = song.idArtist AND song.strTitle = "Wodka" AND artist.strArtist = "Dancefloor Rockaz") AND strTitle = (SELECT song.strTitle FROM song, artist WHERE artist.idArtist = song.idArtist AND song.strTitle = "Wodka" AND artist.strArtist = "Dancefloor Rockaz")
+
+
+
+BANSHEEE UPDATE!!!!!!!!!
+
+UPDATE CoreTracks SET Rating = %s WHERE ArtistID = (SELECT CoreTracks.ArtistID FROM CoreTracks, CoreArtists WHERE CoreTracks.ArtistID = CoreArtists.ArtistID AND CoreTracks.Title = %s AND CoreArtists.Name = %s) AND Title = (SELECT CoreTracks.Title FROM CoreTracks, CoreArtists WHERE CoreArtist.ArtistID = CoreTracks.ArtistID AND CoreTracks.Title = %s AND CoreArtists.Name = %s);
+
+
+
+Clementine Update!!!!
+
+UPDATE songs SET rating = %s WHERE artist = %s AND title = %s;
