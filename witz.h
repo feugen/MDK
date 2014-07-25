@@ -7,7 +7,7 @@ void witz (void)
                 fgets(frage,2,stdin);
 //Kontrollfunktion		printf("frage='%s'", frage);
                 while (frage[0] == 'n')
-//			(zaehler)+= zaehler;
+//			(zaehler)+= zaehler;a
                         {printf("\n\nDu bist Scheisse und  dumm - hahaha, was hast du nun davon.");
                         }
                 if (frage[0] == 'j')
